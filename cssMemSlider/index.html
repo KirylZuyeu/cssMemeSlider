@@ -8,35 +8,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="slider__wrapper">
-                <div class="slider__container">
-                    <div class="slider__line">
-                        <img class="slider__item" src="./assets/img/first.jpg" alt="first meme">
-                        <img class="slider__item" src="./assets/img/second.jpg" alt="second meme">
-                        <img class="slider__item" src="./assets/img/third.jpg" alt="third meme">
-                        <img class="slider__item" src="./assets/img/fourth.jpg" alt="fourth meme">
-                    </div>
-                </div>
-            </div>
-            <div class="control__wrapper">
-                <div class="description">
-                    <div class="description__inner">            
-                        <span class="text">Самая большая сложность данного задания...</span>
-                        <!-- <span class="text">Заключалась в подборе...</span>
-                        <span class="text">Нужных мемов и подписей к ним...</span>
-                        <span class="text">Уверен что у тебя также?</span> -->
-                    </div>
-                </div>    
-                <div class="controls">
-                    <input type="radio" name="radio" id="one" checked>
-                    <input type="radio" name="radio" id="two">
-                    <input type="radio" name="radio" id="three">
-                    <input type="radio" name="radio" id="four">
-                </div>
-            </div>
-        </div>
-    </div>
+	<article id="slider">
+		<input checked="" type="radio" name="slider" id="slide1">
+		<input type="radio" name="slider" id="slide2">
+		<input type="radio" name="slider" id="slide3">
+		<input type="radio" name="slider" id="slide4">>
+		<div id="slides">
+			<div id="overflow">
+				<div class="inner">
+					<article>
+						<img src="./assets/img/first.jpg">
+					</article>
+					<article>
+						<img src="./assets/img/second.jpg">
+					</article>
+					<article>
+						<img src="./assets/img/third.jpg">
+					</article>
+					<article>
+						<img src="./assets/img/fourth.jpg">
+					</article>
+				</div>
+			</div>
+		</div>
+		<div id="active">
+			<label for="slide1"></label>
+			<label for="slide2"></label>
+			<label for="slide3"></label>
+			<label for="slide4"></label>
+		</div>
+	</article>
 </body>
 </html>

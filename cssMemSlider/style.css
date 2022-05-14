@@ -1,44 +1,190 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+body {
+  line-height: 1; }
+ol, ul {
+  list-style: none; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+a img {
+  border: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+body {
+  font: 14px/22px Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #ddd;
+  margin: 50px auto;
+  overflow-x: hidden;
 }
 
-.wrapper {
-    max-width: 1200px;
-    background-color: red;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+#slider {
+	text-align: center;
 }
 
-.container {
-    width: 100%;
-    background-color: blue;
+label{
+	cursor: pointer;
+	text-decoration: none;
 }
 
-.slider__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+* { 
+    box-sizing: border-box; 
 }
 
-.slider__container {
-    /* width: 100%; */
-    max-width: 60rem;
-    border-radius: 15px;
-    overflow: hidden;
+label, #active, img { 
+    user-select:none;
 }
-.slider__line {
-    width: calc(100% * 4);
-    height: 100%;
-    display: flex;
+
+#slider {
+	margin: 0 auto;
 }
-.slider__item {
-    width: 25%;
-    height: auto;
+
+input {
+	display: none;
+}
+
+#slide1:checked ~ #slides .inner { margin-left:0; }
+#slide2:checked ~ #slides .inner { margin-left:-100%; }
+#slide3:checked ~ #slides .inner { margin-left:-200%; }
+#slide4:checked ~ #slides .inner { margin-left:-300%; }
+
+
+#overflow {
+	width: 100%;
+	overflow: hidden;
+}
+
+article img {
+	width: 100%;
+}
+
+#slides .inner {
+	width: 400%;
+	line-height: 0;
+}
+
+#slides article {
+	width: 25%;
+	float: left;
 }
 
 
+#active {
+	margin: 23% 0 0;
+	text-align: center;
+}
+
+#active label {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #bbb;
+}
+
+#active label:hover {
+	background: #ccc;
+	border-color: #777 !important;
+}
+
+
+#slide1:checked ~ #active label:nth-child(1),
+#slide2:checked ~ #active label:nth-child(2),
+#slide3:checked ~ #active label:nth-child(3),
+#slide4:checked ~ #active label:nth-child(4) {
+	background: #333;
+	border-color: #333 !important;
+}
+
+
+#slides {
+	margin: 45px 0 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 4px #666;
+	padding: 1%;
+	background: linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(219,218,201,1) 100%); /* W3C */
+
+}
+
+
+/* Animation */
+
+#slides .inner {
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
+    transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
+}
+
+#slider {
+	transition: all 0.5s ease-out;
+}
+
+
+
+
+#slides, #active, #active label {
+	transition: all 0.5s ease-out;
+}
+
+
+@media only screen and (max-width: 850px) and (min-width: 450px) {
+	#slider #slides {
+		padding: 1% 0;
+		border-radius: 0px;
+	}
+
+	#slider #active {
+		margin: 22% 0 0;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+	#slider #active {
+		margin: 23% 0 0;
+	}
+
+	#slider #slides {
+		padding: 1% 0;
+		border-radius: 0px;
+	}
+}
+
+
+@media only screen and (min-width: 850px) {
+
+	body {
+		padding: 0 80px;
+	}
+}
