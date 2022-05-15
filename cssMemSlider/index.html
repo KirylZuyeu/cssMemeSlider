@@ -10,10 +10,10 @@
 <body>
 	<div class="wrapper">
 		<div class="slider">
-			<input checked="" type="radio" name="slider" id="slide1">
-			<input type="radio" name="slider" id="slide2">
-			<input type="radio" name="slider" id="slide3">
-			<input type="radio" name="slider" id="slide4">
+			<input class="input" checked="" type="radio" name="slider" id="slide1">
+			<input class="input" type="radio" name="slider" id="slide2">
+			<input class="input" type="radio" name="slider" id="slide3">
+			<input class="input" type="radio" name="slider" id="slide4">
 			<div class="slides">
 				<div class="slides__overflow">
 					<div class="slides__inner">
@@ -32,30 +32,33 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div id="slides">
-				<div id="overflow">
-					<div class="inner">
-						<div>
-							<span>Думаю не я один...</span>
+			<div class="controler__panel">
+				<div class="lenta">
+					<div class="lenta__overflow">
+						<div class="lenta__inner">
+							<div class="lenta__item">
+								<p class="lenta__description">Думаю не я один...</p>
+							</div>
+							<div class="lenta__item">
+								<p class="lenta__description">Затратил большую часть времени...</p>
+							</div>
+							<div class="lenta__item">
+								<p class="lenta__description">На подбор мемов и генирацию раз...</p>
+							</div>
+							<div class="lenta__item">
+								<p class="lenta__description">Чем на выполнение самого задания, хнык.</p>
+							</div>
 						</div>
-						<div>
-							<span>Затратил большую часть времени...</span>
-						</div>
-						<div>
-							<span>На подбор мемов и генирацию раз...</span>					</div>
-						</div>
-						<article>
-							<span>Чем на выполнение самого задания, хнык.</span>
-						</article>
 					</div>
 				</div>
-			</div> -->
-			<div class="active">
-				<label class="label" for="slide1"></label>
-				<label class="label" for="slide2"></label>
-				<label class="label" for="slide3"></label>
-				<label class="label" for="slide4"></label>
+				<div class="active">
+					<label class="label" for="slide1"></label>
+					<label class="label" for="slide2"></label>
+					<label class="label" for="slide3"></label>
+					<label class="label" for="slide4"></label>
+				</div>
 			</div>
+
 		</div>
 	</div>
 </body>
