@@ -101,24 +101,53 @@ body {
 }
 
 .label {
-	border-radius: 50%;
 	display: inline-block;
-	width: 30px;
-	height: 30px;
-	background: rgb(0, 166, 255);
+	width: 60px;
+	height: 60px;
+	background: #25282A;
 	margin: 0 3px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.label:hover {
-	background: rgb(30, 0, 255);
+.label span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(0, 166, 255);
+    transition: all .3s ease;
 }
 
-#slide1:checked ~ .controler__panel .active .label:nth-child(1),
-#slide2:checked ~ .controler__panel .active .label:nth-child(2),
-#slide3:checked ~ .controler__panel .active .label:nth-child(3),
-#slide4:checked ~ .controler__panel .active .label:nth-child(4) {
+.label:hover span {
+	background: rgb(250, 250, 255);
+}
+
+.label:active span {
+	background: rgb(52, 226, 52);
+}
+
+#slide1:checked ~ .controler__panel .active .label:nth-child(1) span,
+#slide2:checked ~ .controler__panel .active .label:nth-child(2) span,
+#slide3:checked ~ .controler__panel .active .label:nth-child(3) span,
+#slide4:checked ~ .controler__panel .active .label:nth-child(4) span {
 	background: #25282A;
 	border: 4px solid rgb(0, 166, 255) !important;
+}
+
+#slide1:checked ~ .controler__panel .active .label:nth-child(1):hover span,
+#slide2:checked ~ .controler__panel .active .label:nth-child(2):hover span,
+#slide3:checked ~ .controler__panel .active .label:nth-child(3):hover span,
+#slide4:checked ~ .controler__panel .active .label:nth-child(4):hover span {
+	background: #25282A;
+	border: 4px solid rgb(250, 250, 255) !important;
+}
+
+#slide1:checked ~ .controler__panel .active .label:nth-child(1):active span,
+#slide2:checked ~ .controler__panel .active .label:nth-child(2):active span,
+#slide3:checked ~ .controler__panel .active .label:nth-child(3):active span,
+#slide4:checked ~ .controler__panel .active .label:nth-child(4):active span {
+	background: rgb(52, 226, 52);
 }
 
 .slides {
