@@ -2,8 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-	user-select:none;
+	user-select: none;
 }
+
+:root {
+	font-size: 10px; /* Здесь используютя px для переопределения стандартного значения rem */
+}
+  
 
 body {
   background: #25282A;
@@ -12,13 +17,13 @@ body {
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 120rem;
 	display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 	height: 100vh;
-	padding: 0 20px;
+	padding: 0 3rem;
 }
 
 .label {
@@ -26,7 +31,7 @@ body {
 }
 
 .slider {
-	text-align: center;
+	width: 100%;
 	transition: all 0.5s ease-out;
 }
 
@@ -43,7 +48,7 @@ body {
 .slides__overflow {
 	width: 100%;
 	overflow: hidden;
-	border-radius: 20px;
+	border-radius: 2rem;
 }
 
 .slides__img {
@@ -53,16 +58,16 @@ body {
 .slides__inner {
 	width: 400%;
 	line-height: 0;
+	display: flex;
 }
 
 .slides__item {
 	width: 25%;
-	float: left;
 }
 
 .controler__panel {
 	display: flex;
-	padding: 30px 0;
+	padding: 3rem 0;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -72,26 +77,27 @@ body {
 #slide3:checked ~ .controler__panel .lenta .lenta__inner { margin-left:-200%; }
 #slide4:checked ~ .controler__panel .lenta .lenta__inner { margin-left:-300%; }
 
+.lenta {
+	width: 70%;
+}
+
 .lenta__overflow {
 	width: 100%;
 	overflow: hidden;
 }
 
-.lenta__img {
-	width: 100%;
-}
-
 .lenta__inner {
 	width: 400%;
+	display: flex;
 }
 
 .lenta__item {
 	width: 25%;
-	float: left;
 }
 
 .lenta__description {
-	font-size: 35px;
+	padding-left: 0.5rem;
+	font-size: 3.5rem;
 	font-weight: 400;
 	text-align: start;
 }
@@ -102,18 +108,18 @@ body {
 
 .label {
 	display: inline-block;
-	width: 60px;
-	height: 60px;
+	width: 5rem;
+	height: 8rem;
 	background: #25282A;
-	margin: 0 3px;
+	margin: 0 0.5rem;
 	display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .label span {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     background: rgb(0, 166, 255);
     transition: all .3s ease;
@@ -127,31 +133,31 @@ body {
 	background: rgb(52, 226, 52);
 }
 
-#slide1:checked ~ .controler__panel .active .label:nth-child(1) span,
-#slide2:checked ~ .controler__panel .active .label:nth-child(2) span,
-#slide3:checked ~ .controler__panel .active .label:nth-child(3) span,
-#slide4:checked ~ .controler__panel .active .label:nth-child(4) span {
+#slide1:checked ~ .controler__panel .active .label1 span,
+#slide2:checked ~ .controler__panel .active .label2 span,
+#slide3:checked ~ .controler__panel .active .label3 span,
+#slide4:checked ~ .controler__panel .active .label4 span {
 	background: #25282A;
-	border: 4px solid rgb(0, 166, 255) !important;
+	border: 0.4rem solid rgb(0, 166, 255) !important;
 }
 
-#slide1:checked ~ .controler__panel .active .label:nth-child(1):hover span,
-#slide2:checked ~ .controler__panel .active .label:nth-child(2):hover span,
-#slide3:checked ~ .controler__panel .active .label:nth-child(3):hover span,
-#slide4:checked ~ .controler__panel .active .label:nth-child(4):hover span {
+#slide1:checked ~ .controler__panel .active .label1:hover span,
+#slide2:checked ~ .controler__panel .active .label2:hover span,
+#slide3:checked ~ .controler__panel .active .label3:hover span,
+#slide4:checked ~ .controler__panel .active .label4:hover span {
 	background: #25282A;
-	border: 4px solid rgb(250, 250, 255) !important;
+	border: 0.4rem solid rgb(250, 250, 255) !important;
 }
 
-#slide1:checked ~ .controler__panel .active .label:nth-child(1):active span,
-#slide2:checked ~ .controler__panel .active .label:nth-child(2):active span,
-#slide3:checked ~ .controler__panel .active .label:nth-child(3):active span,
-#slide4:checked ~ .controler__panel .active .label:nth-child(4):active span {
+#slide1:checked ~ .controler__panel .active .label1:active span,
+#slide2:checked ~ .controler__panel .active .label2:active span,
+#slide3:checked ~ .controler__panel .active .label3:active span,
+#slide4:checked ~ .controler__panel .active .label4:active span {
 	background: rgb(52, 226, 52);
 }
 
 .slides {
-	margin: 45px 0 0;
+	margin: 4.5rem 0 0;
 }
 
 .slides__inner {
@@ -168,10 +174,14 @@ body {
 	transition: all 0.5s ease-out;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 87.4rem) {
+	.lenta {
+		width: 100%;
+	}
+
     .controler__panel {
-		padding: 40px 0;
+		padding: 4rem 0;
 		flex-direction: column-reverse;
-		gap: 20px;
+		gap: 2rem;
 	}
 }
