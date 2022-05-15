@@ -1,110 +1,64 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-body {
-  line-height: 1; }
-ol, ul {
-  list-style: none; }
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
-q, blockquote {
-  quotes: none; }
-  q:before, q:after, blockquote:before, blockquote:after {
-    content: "";
-    content: none; }
-a img {
-  border: none; }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	user-select:none;
+}
 
 body {
-  font: 14px/22px Arial, Helvetica, sans-serif;
-  color: #333;
   background: #ddd;
-  margin: 50px auto;
-  overflow-x: hidden;
 }
 
-#slider {
-	text-align: center;
-}
-
-label{
-	cursor: pointer;
-	text-decoration: none;
-}
-
-* { 
-    box-sizing: border-box; 
-}
-
-label, #active, img { 
-    user-select:none;
-}
-
-#slider {
+.wrapper {
 	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.label {
+	cursor: pointer;
+}
+
+.slider {
+	text-align: center;
+	transition: all 0.5s ease-out;
 }
 
 input {
 	display: none;
 }
 
-#slide1:checked ~ #slides .inner { margin-left:0; }
-#slide2:checked ~ #slides .inner { margin-left:-100%; }
-#slide3:checked ~ #slides .inner { margin-left:-200%; }
-#slide4:checked ~ #slides .inner { margin-left:-300%; }
+#slide1:checked ~ .slides .slides__inner { margin-left:0; }
+#slide2:checked ~ .slides .slides__inner { margin-left:-100%; }
+#slide3:checked ~ .slides .slides__inner { margin-left:-200%; }
+#slide4:checked ~ .slides .slides__inner { margin-left:-300%; }
 
 
-#overflow {
+.slides__overflow {
 	width: 100%;
 	overflow: hidden;
 }
 
-article img {
+.slides__img {
 	width: 100%;
 }
 
-#slides .inner {
+.slides .slides__inner {
 	width: 400%;
 	line-height: 0;
 }
 
-#slides article {
+.slides__item {
 	width: 25%;
 	float: left;
 }
 
 
-#active {
+.active {
 	margin: 23% 0 0;
 	text-align: center;
 }
 
-#active label {
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+.active label {
 	border-radius: 5px;
 	display: inline-block;
 	width: 10px;
@@ -112,22 +66,22 @@ article img {
 	background: #bbb;
 }
 
-#active label:hover {
+.active label:hover {
 	background: #ccc;
 	border-color: #777 !important;
 }
 
 
-#slide1:checked ~ #active label:nth-child(1),
-#slide2:checked ~ #active label:nth-child(2),
-#slide3:checked ~ #active label:nth-child(3),
-#slide4:checked ~ #active label:nth-child(4) {
+#slide1:checked ~ .active .label:nth-child(1),
+#slide2:checked ~ .active .label:nth-child(2),
+#slide3:checked ~ .active .label:nth-child(3),
+#slide4:checked ~ .active .label:nth-child(4) {
 	background: #333;
 	border-color: #333 !important;
 }
 
 
-#slides {
+.slides {
 	margin: 45px 0 0;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -141,41 +95,34 @@ article img {
 
 /* Animation */
 
-#slides .inner {
+.slides .slides__inner {
     transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
     transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
 }
 
-#slider {
-	transition: all 0.5s ease-out;
-}
-
-
-
-
-#slides, #active, #active label {
+.slides, .active, .active label {
 	transition: all 0.5s ease-out;
 }
 
 
 @media only screen and (max-width: 850px) and (min-width: 450px) {
-	#slider #slides {
+	.slider .slides {
 		padding: 1% 0;
 		border-radius: 0px;
 	}
 
-	#slider #active {
+	.slider .active {
 		margin: 22% 0 0;
 	}
 
 }
 
 @media only screen and (max-width: 450px) {
-	#slider #active {
+	.slider .active {
 		margin: 23% 0 0;
 	}
 
-	#slider #slides {
+	.slider .slides {
 		padding: 1% 0;
 		border-radius: 0px;
 	}
