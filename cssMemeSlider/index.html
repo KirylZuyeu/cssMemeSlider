@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CssMemSlider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="slider">
+			<input class="input" checked="" type="radio" name="slider" id="slide1">
+			<input class="input" type="radio" name="slider" id="slide2">
+			<input class="input" type="radio" name="slider" id="slide3">
+			<input class="input" type="radio" name="slider" id="slide4">
+			<div class="slides">
+				<div class="slides__overflow">
+					<div class="slides__inner">
+						<div class="slides__item">
+							<img class="slides__img" src="./assets/img/first.jpg">
+						</div>
+						<div class="slides__item">
+							<img class="slides__img" src="./assets/img/second.jpg">
+						</div>
+						<div class="slides__item">
+							<img class="slides__img" src="./assets/img/third.jpg">
+						</div>
+						<div class="slides__item">
+							<img class="slides__img" src="./assets/img/fourth.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="controler__panel">
+				<div class="lenta">
+					<div class="lenta__overflow">
+						<div class="lenta__inner">
+							<div class="lenta__item">
+								<p class="lenta__description">Думаю не я один...</p>
+							</div>
+							<div class="lenta__item">
+								<p class="lenta__description">Затратил больше времени...</p>
+							</div>
+							<div class="lenta__item">
+								<p class="lenta__description">На подбор мемов ...</p>
+							</div>
+							<div class="lenta__item">
+								<p class="lenta__description">Чем на решение задания.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="active">
+					<label class="label label1" for="slide1">
+						<span></span>
+					</label>
+					<label class="label label2" for="slide2">
+						<span></span>
+					</label>
+					<label class="label label3" for="slide3">
+						<span></span>
+					</label>
+					<label class="label label4" for="slide4">
+						<span></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
